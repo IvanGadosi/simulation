@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}
+	<title>Result</title>
+{% endblock title %}
+
+
+
+{% block content %}
+<h1 class="text-primary">Graph generated</h1>
+<p>5 players played a game for {{ graph.turns }} turns, with {{ graph.money }} as starting money and bet {{ graph.bet }}</p>
+<div class="text-center">
+	<img src="{{ graph.graph.url }}" style="width: 500px; height: auto;">
+</div>
+<form enctype="multipart/form-data"method="post">
+	{% csrf_token %}
+	<input type="submit" value="Download" class="btn btn-lg btn-primary fw-bold">
+</form>
+{% endblock content %}

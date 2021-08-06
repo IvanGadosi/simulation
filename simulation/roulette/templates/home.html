@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}
+	<title>Home</title>
+{% endblock title %}
+
+
+
+{% block content %}
+<h1>Generate 5 separate games of roulette</h1>
+<p class="lead">Select your starting money, bet per round and number of rounds you wish to play.</p>
+<p></p>
+<form method="post">
+	{% csrf_token %}
+	{{ graph_form.as_p }}
+	<button type="submit" class="btn btn-lg btn-primary fw-bold">Generate</button>
+</form>
+{% endblock content %}
